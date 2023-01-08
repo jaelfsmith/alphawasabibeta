@@ -1,0 +1,1263 @@
+
+#
+import os
+from os import system
+import time
+from time import sleep
+import sys
+
+weapon = False
+jael = False
+
+
+# Clearing the Screen
+# os.system('clear')
+
+def ossystemdelayclear():
+    time.sleep(10)
+    os.system('clear')
+
+
+def ossystemdelayclear2():
+    time.sleep(5)
+    os.system('clear')
+
+
+def scrollTxt(text):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.01)
+
+
+def timer(text):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(1)
+
+
+def timer2(text):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.5)
+
+
+def timer3(text):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.25)
+
+
+def scrollTxtfast(text):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.001)
+
+
+black = "\033[0;30m"
+purple = "\033[0;35m"
+blue = "\033[0;34m"
+green = "\033[0;32m"
+red = "\033[0;31m"
+yellow = "\033[0;33m"
+white = "\033[0;37m"
+
+
+def startingbedroom():
+    print("")
+    directions = ["closet", "exit the bedroom", "kitchen"]
+    print(blue)
+    scrollTxt("The game begins with you in your bedroom sitting in a office chair that is missing wheels.\n")
+    print("")
+    scrollTxt("You stand up from your office chair to meet your door dash driver at the door.\n")
+    print("")
+    scrollTxt("In this room you only have two choices. Where do you go?\n")
+    print("")
+    print(green)
+    userInput = ""
+    while userInput not in directions:
+        print(green)
+        scrollTxt("Options: closet/exit the bedroom")
+        print("")
+        print(white)
+        userInputsb = input()
+        if userInputsb == "closet":
+            os.system('clear')
+            print("")
+            print("")
+            print(red)
+            scrollTxt("The closet isn't where your door dash delivery is.\n")
+            scrollTxt("This is a beta move. You are beta\n")
+            print("")
+            scrollTxt("BTW, this is a picture of your closet.\n")
+            scrollTxt("might need to reference this later...\n")
+            print("")
+            print(green)
+            scrollTxt("https://imgur.com/WbWFLQ3")
+            print("")
+            print(red)
+            scrollTxt("BTW, the text will disappear in 5 seconds so you better hurry and save it.\n")
+            time.sleep(2)
+            print("")
+            timer("12345")
+            os.system('clear')
+            play()
+        elif userInputsb == "exit the bedroom":
+            firsthallway()
+        else:
+            print("Please enter a valid option.")
+
+
+def firsthallway():
+    os.system('clear')
+    directions = ["First Bathroom", "second bedroom", "Great Room", "Backwards"]
+    print("")
+    print(blue)
+    scrollTxt("You are standing in a small hallway with four directions you could choose.\n")
+    time.sleep(0.05)
+    print("")
+    userInput = ""
+    while userInput not in directions:
+        print(green)
+        print("Options: First Bathroom / second bedroom / Great Room / Backwards.")
+        print("")
+        print(white)
+        userInput = input()
+        if userInput == "First Bathroom":
+            os.system('clear')
+            print("")
+            print(red)
+            scrollTxt("The goal of this game isn't to go to the bathroom.\n")
+            print("")
+            scrollTxt("The goal is your doordash delivery.\n")
+            print("")
+            scrollTxt("BTW, this is a picture of your bathroom. You might need to reference this later...\n")
+            print("")
+            print(green)
+            print("https://imgur.com/a/kLrq5FK")
+            print("")
+            print(red)
+            timer("RESTART")
+            os.system('clear')
+            play()
+        elif userInput == "second bedroom":
+            secondbedroom()
+        elif userInput == "Great Room":
+            greatroom()
+        elif userInput == "Backwards":
+            startingbedroom2()
+        else:
+            print("Please enter a valid option.")
+            timer("123")
+
+
+def greatroom():
+    os.system('clear')
+    print("")
+    print(blue)
+    directions = ["Kitchen", "Foyer", "second Hallway", "Back to first hallway"]
+    scrollTxt("Your house has an open concept between the Great Room the kitchen, and\n")
+    scrollTxt("the Foyer. There are no walls separating them.\n")
+    scrollTxt("The kitchen does have an prep island between it, the Great Room, and the Foyer.\n")
+    scrollTxt("Next to the Foyer (where the front door is) is a wall with a door\n")
+    scrollTxt("that leads to an additional part of your house.\n")
+    scrollTxt("Currently, you are standing in the great room which is decorated like you\n")
+    scrollTxt("are running a Goodwill Thrift store.\n")
+    scrollTxt("While you know your food is just on the other side of the front door in the Foyer.\n")
+    scrollTxt("Your beta brain is telling you that you might not have everything you need to retrieve the food yet.\n")
+    print("")
+    userInput = ""
+    while userInput not in directions:
+        print(green)
+        print("Kitchen / Foyer / second Hallway / Back to first hallway")
+        print("")
+        print(white)
+        userInput = input()
+        if userInput == "Kitchen":
+            kitchen()
+        elif userInput == "Foyer":
+            foyer()
+        elif userInput == "second Hallway":
+            secondhallway()
+        elif userInput == "Back to first hallway":
+            print(red)
+            os.system('clear')
+            print("")
+            print("")
+            print(red)
+            scrollTxt("If you are going backwards you might as well start from the beginning. Beta!\n")
+            print("")
+            timer("RESTART")
+            play()
+        else:
+            print("Please enter a valid option.")
+
+
+def foyer():
+    os.system('clear')
+    directions = ["Great Room", "Kitchen", "second Hallway", "Door", ]
+    print("")
+    print(blue)
+    scrollTxt("You are standing in your Foyer looking at your door.\n")
+    scrollTxt("You notice that there is a lock on the door that was designed to be unlocked from the inside.\n")
+    scrollTxt("Funny thing putting a lock on your door like this. As if you wanted to keep something from getting\n")
+    scrollTxt("out of the house. You remember that the code is six numbers. But do you remember the numbers?\n")
+    print("")
+    userInput = ""
+    while userInput not in directions:
+        print(green)
+        print("")
+        print("Kitchen / Great Room / second Hallway / Door")
+        print("")
+        print(white)
+        userInput = input()
+        if userInput == "Door":
+            os.system('clear')
+            door()
+        elif userInput == "Great Room":
+            greatroom2()
+        elif userInput == "Kitchen":
+            kitchen()
+        elif userInput == "second Hallway":
+            secondhallway()
+        else:
+            print("Please enter a valid option.")
+
+
+def secondhallway():
+    directions = ["Master Bedroom", "Laundry Room", "Garage", "Back to Foyer"]
+    os.system('clear')
+    print(blue)
+    print("")
+    scrollTxt("You are in a hallway with four directions to chose from.\n")
+    print("")
+    userInput = ""
+    while userInput not in directions:
+        print(green)
+        print("Options: Master Bedroom / Laundry Room / Garage / Back to Foyer")
+        print("")
+        print(white)
+        userInput = input()
+        if userInput == "Master Bedroom":
+            masterbedroom()
+        elif userInput == "Laundry Room":
+            os.system('clear')
+            print("")
+            print(red)
+            scrollTxt("The laundry room isn't getting you any closer to your door dash.\n")
+            scrollTxt("Btw, your laundry room looks like this: \n")
+            print("")
+            print(green)
+            scrollTxt("https://imgur.com/a/M67XMHo\n")
+            print("")
+            print(red)
+            timer("RESTART")
+            os.system('clear')
+            play()
+        elif userInput == "Garage":
+            garage()
+        elif userInput == "Back to Foyer":
+            foyer3()
+        else:
+            print("Please enter a valid option.")
+
+
+def garage():
+    directions = ["second Hallway"]
+    print("")
+    os.system('clear')
+    print(blue)
+    scrollTxt("The garage isn't that important to you.\n")
+    scrollTxt("It is currently empty.\n")
+    scrollTxt("It is large enough to hold several cars though.\n")
+    scrollTxt("You think to yourself. It could probably hold the same amount of\n")
+    scrollTxt("cars as your good friend grumple claims to own.\n")
+    print("")
+    print(green)
+    print("https://imgur.com/a/dRvovLV")
+    print("")
+    print(blue)
+    scrollTxt("You don't know why, but this number is important to you.\n")
+    print("")
+    scrollTxt("I wont restart here. Your welcome.\n")
+    userInput = ""
+    while userInput not in directions:
+        print("")
+        print(green)
+        print("Options: Back to Second Hallway")
+        print("")
+        print(white)
+        userInput = input()
+        if userInput == "Back to Second Hallway":
+            secondhallway()
+        else:
+            print("Please enter a valid option.")
+
+
+def laundry():
+    directions = ["second Hallway"]
+    print("The garage isn't that important to you.")
+    print("It is currently empty.")
+    print("It is large enough to hold several cars though.")
+    print("You think to yourself. It could probably hold the same amount of")
+    print("cars as your good friend grumple claims to own.")
+    print("You don't know why, but this number is important to you.")
+    userInput = ""
+    while userInput not in directions:
+        print("Options: Back to Second Hallway")
+        print(white)
+        userInput = input()
+        if userInput == "Back to Second Hallway":
+            secondhallway()
+        else:
+            print("Please enter a valid option.")
+
+
+def foyer3():
+    directions = ["Great Room", "Kitchen", "second Hallway", "Door", ]
+    print("")
+    os.system('clear')
+    print(blue)
+    scrollTxt("You are standing in your Foyer again.\n")
+    scrollTxt("Hopefully you know the code by this point.\n")
+    scrollTxt("You know, the six numbers. For the love of JaelisChrist, do you know the numbers now?\n")
+    scrollTxt("Go to the door if you do.\n")
+    print("")
+    userInput = ""
+    while userInput not in directions:
+        print(green)
+        print("")
+        print("Options: Kitchen / Great Room / second Hallway / Door")
+        print("")
+        print(white)
+        userInput = input()
+        if userInput == "Door":
+            door()
+        else:
+            print("Please enter a valid option.")
+
+
+def masterbedroom():
+    directions = ["Walk in Closet", "Master Bath", "Back to Second Hallway"]
+    os.system('clear')
+    print(blue)
+    print("")
+    scrollTxt("You are in the Master Bed Room.\n")
+    scrollTxt("Kind of a beta move not using the Master Bed Room in your own house.\n")
+    scrollTxt("You notice that all the furniture appears to be smaller than average.\n")
+    scrollTxt("Almost like the person who is kept in this part of the house is shorter than most.\n")
+    scrollTxt("You can hear a rustling but you can't tell if it is coming from the bath or closet.\n")
+    userInput = ""
+    while userInput not in directions:
+        print("")
+        print(green)
+        print("Options: Walk in Closet / Master Bath / Back to Second Hallway")
+        print("")
+        print(white)
+        userInput = input()
+        if userInput == "Master Bath":
+            os.system('clear')
+            print(red)
+            print("")
+            scrollTxt("You think that your previous encounter with your restroom would have\n")
+            scrollTxt("taught you that this doesn't get you closer to your goal.\n")
+            scrollTxt("It is a more spacious restroom though and looks like this.\n")
+            print("")
+            print(green)
+            scrollTxt("https://imgur.com/a/X2jZuft")
+            print("")
+            print(red)
+            timer("Restart")
+            os.system('clear')
+            play()
+        elif userInput == "Back to Second Hallway":
+            secondhallway()
+        elif userInput == "Walk in Closet":
+            wic()
+        else:
+            print("Please enter a valid option.")
+
+
+def masterbedroom2():
+    directions = ["Walk in Closet", "Master Bath", "Back to Second Hallway"]
+    os.system('clear')
+    print(blue)
+    print("")
+    scrollTxt("You are in the Master Bed Room.\n")
+    scrollTxt("You can no longer hear any rustling.\n")
+    scrollTxt("Which way do you go?\n")
+    userInput = ""
+    while userInput not in directions:
+        print("")
+        print(green)
+        print("Options: Walk in Closet / Master Bath / Back to Second Hallway")
+        print("")
+        print(white)
+        userInput = input()
+        if userInput == "Master Bath":
+            os.system('clear')
+            print(red)
+            print("")
+            scrollTxt("You think that your previous encounter with your restroom would have\n")
+            scrollTxt("taught you that this doesn't get you closer to your goal.\n")
+            scrollTxt("It is a more spacious restroom though and looks like this.\n")
+            print("")
+            print(green)
+            scrollTxt("https://imgur.com/a/X2jZuft")
+            print("")
+            print(red)
+            timer("Restart")
+            os.system('clear')
+            play()
+        elif userInput == "Back to Second Hallway":
+            secondhallway()
+        elif userInput == "Walk in Closet":
+            os.system('clear')
+            print("")
+            print(red)
+            scrollTxt("Seriously? Returning to your murder scene?\n")
+            scrollTxt("Wrong Choice...\n")
+            timer("RESTART")
+            play()
+        else:
+            print("Please enter a valid option.")
+
+
+def wic():
+    actions = ["fight", "talk"]
+    os.system('clear')
+    global weapon
+    global jael
+    print("")
+    print(blue)
+    scrollTxt("The walk in closet is quite spacious.\n")
+    scrollTxt("And inside is a short mustached baby man holding a t-ball bat.\n")
+    scrollTxt("He eyes you with suspicion. What do you do?\n")
+    print("")
+    userInput = ""
+    while userInput not in actions:
+        print("")
+        print(green)
+        print("Options: talk / fight")
+        print("")
+        print(white)
+        userInput = input()
+        if userInput == "talk":
+            if weapon:
+                print("")
+                os.system('clear')
+                print(blue)
+                scrollTxt("You try talking to the mustached baby man. I just want my food, you say\n")
+                scrollTxt("but I can't remember the code.\n")
+                print(green)
+                print("")
+                scrollTxt("Beta move, the baby man says. You left clues for your smooth brain everywhere in the house.\n")
+                scrollTxt("The first digit is the order placement of the second digit in each number found in each clue.\n")
+                time.sleep(5)
+                print(blue)
+                print("")
+                scrollTxt("Thank you mustached baby man. You say. Turning, you come out of the closet\n")
+                scrollTxt("Realizing there is nothing to be afraid of in this house,\n")
+                scrollTxt("you drop the knife on a table in the Master Bedroom\n")
+                print("")
+                weapon = False
+                scrollTxt("Make sure you understand the code before you leave. Ten Count\n")
+                timer("12345678910")
+                masterbedroom()
+            else:
+                print("")
+                os.system('clear')
+                print(blue)
+                scrollTxt("You try talking to the mustached baby man. I just want my food, you say\n")
+                scrollTxt("but I can't remember the code.\n")
+                print(green)
+                print("")
+                scrollTxt("Beta move, the baby man says. You left clues for your smooth brain everywhere in the house.\n")
+                scrollTxt("The first digit is the order placement of the second digit in each number found in each clue.\n")
+                time.sleep(5)
+                print(blue)
+                print("")
+                scrollTxt("Thank you mustached baby man. You say. Turning, you come out of the closet\n")
+                print("")
+                scrollTxt("Make sure you understand the code before you leave. Ten Count\n")
+                timer("12345678910")
+                masterbedroom()
+        elif userInput == "fight":
+            if weapon:
+                os.system('clear')
+                print(green)
+                scrollTxt("Without a moment of hesitation you run up and stab the mustached baby man in the neck.\n")
+                time.sleep(1)
+                print("")
+                scrollTxt("As he is bleeding out and crumpling down to the floor. You hear him say,\n")
+                time.sleep(2)
+                print("")
+                print(red)
+                scrollTxt("Murder is beta.....\n")
+                time.sleep(5)
+                print("")
+                print(green)
+                scrollTxt("You turn, coming out of the closet leaving the mustached baby man\n")
+                print("")
+                scrollTxt("to decompose into yet another skeleton in your...closet\n")
+                time.sleep(4)
+                print("")
+                timer2("YOU EXIT THE CLOSET")
+                jael = True
+                masterbedroom2()
+            else:
+                os.system('clear')
+                print(red)
+                scrollTxt("As you run up to fight him. You realize that you didn't keep the")
+                print("")
+                scrollTxt("knife from the kitchen. The mustached baby hits you in the knee with the bat.")
+                print("")
+                time.sleep(5)
+                print("")
+                scrollTxt("Then with rouge like acrobats, he cartwheels out of the closet laughing.")
+                print("")
+                scrollTxt("You hear him in the distance yelling that he knows the code to the door.")
+                print("")
+                time.sleep(5)
+                print("")
+                scrollTxt("The mustached baby man escapes into the world.")
+                time.sleep(3)
+                print("")
+                print("")
+                scrollTxt("To be clear, you could have stopped him as the bat to the knee wasn't that harmful.")
+                print("")
+                print("")
+                time.sleep(3)
+                scrollTxt("You were just to shocked to be bested by the mustached baby man that you froze.")
+                print("")
+                print("")
+                timer3("GAME OVER MAN!!!!!")
+                scrollTxtfast("""\
+
+                         __       ___       _______  __                  
+                        |  |     /   \     |   ____||  |                 
+                        |  |    /  ^  \    |  |__   |  |                 
+                  .--.  |  |   /  /_\  \   |   __|  |  |                 
+                  |  `--'  |  /  _____  \  |  |____ |  `----.            
+                   \______/  /__/     \__\ |_______||_______|            
+
+                              __       _______.                         
+                             |  |     /       |                         
+                             |  |    |   (----`                         
+                             |  |     \   \                             
+                             |  | .----)   |                            
+                             |__| |_______/                             
+
+                         ___       __      .______    __    __       ___      
+                        /   \     |  |     |   _  \  |  |  |  |     /   \     
+                       /  ^  \    |  |     |  |_)  | |  |__|  |    /  ^  \    
+                      /  /_\  \   |  |     |   ___/  |   __   |   /  /_\  \   
+                     /  _____  \  |  `----.|  |      |  |  |  |  /  _____  \  
+                    /__/     \__\ |_______|| _|      |__|  |__| /__/     \__\ 
+                                                                           """)
+                print("")
+                print(green)
+                print("")
+                timer("...")
+                os.system('clear')
+                play()
+
+    else:
+        print("Please enter a valid option.")
+
+
+def foyer2():
+    directions = ["Great Room", "Kitchen", "second Hallway", "Door", ]
+    print("")
+    os.system('clear')
+    print(blue)
+    scrollTxt("You are standing in your Foyer looking at your door.\n")
+    scrollTxt("You notice that there is a lock on the door that was designed to be unlocked from the inside.\n")
+    scrollTxt("Funny thing putting a lock on your door like this. As if you wanted to keep something from getting\n")
+    scrollTxt("out of the house. You remember that the code is six numbers. But do you remember the numbers?\n")
+    print("")
+    userInput = ""
+    while userInput not in directions:
+        print(green)
+        print("Kitchen / Great Room / second Hallway / Door")
+        print(white)
+        userInput = input()
+        if userInput == "Door":
+            door()
+        elif userInput == "Great Room":
+            greatroom2()
+        elif userInput == "Kitchen":
+            os.system('clear')
+            print("")
+            print(red)
+            scrollTxt("You already spent too much time in the Kitchen not progressing the game.\n")
+            scrollTxt("I'm restarting the game simply because I am frustrated with your beta-ness!\n")
+            print("")
+            timer("BETA")
+            os.system('clear')
+            play()
+        elif userInput == "second Hallway":
+            secondhallway()
+        else:
+            print("Please enter a valid option.")
+
+
+def door():
+    print("")
+    print("")
+    actions = ["045128"]
+    global jael
+    print(green)
+    print("Go ahead and enter the number. If you get it wrong the game restarts.")
+    userInput = ""
+    while userInput not in actions:
+        print(blue)
+        print("")
+        print("Options: EnTeRtHeCoDe")
+        print("")
+        print(white)
+        userInput = input()
+        if userInput == "045128":
+            if jael:
+                print(green)
+                print("")
+                os.system('clear')
+                print(green)
+                print("You successfully opened the door.")
+                print("")
+                timer("LOADING")
+                porch()
+            else:
+                print(red)
+                os.system('clear')
+                print(red)
+                print("")
+                scrollTxt("Just as you unlocked the door, you were bludgeoned in the back of your head\n")
+                scrollTxt("with a heavy object. You are knocked unconscious.\n")
+                print("")
+                time.sleep(1)
+                scrollTxt("When you come to a few hours later. You are lying in the open door\n")
+                scrollTxt("halfway in and out of your house. Besides the headache you notice that\n")
+                scrollTxt("your doordash order has been eaten as your porch\n")
+                scrollTxt("is littered with empty taco bell wrappers.\n")
+                print("")
+                time.sleep(2)
+                timer2("GaMeOvEr!")
+                print(green)
+                os.system('clear')
+                print(red)
+                scrollTxtfast("""\
+
+                     __       ___       _______  __                  
+                    |  |     /   \     |   ____||  |                 
+                    |  |    /  ^  \    |  |__   |  |                 
+              .--.  |  |   /  /_\  \   |   __|  |  |                 
+              |  `--'  |  /  _____  \  |  |____ |  `----.            
+               \______/  /__/     \__\ |_______||_______|            
+
+                          __       _______.                         
+                         |  |     /       |                         
+                         |  |    |   (----`                         
+                         |  |     \   \                             
+                         |  | .----)   |                            
+                         |__| |_______/                             
+
+                     ___       __      .______    __    __       ___      
+                    /   \     |  |     |   _  \  |  |  |  |     /   \     
+                   /  ^  \    |  |     |  |_)  | |  |__|  |    /  ^  \    
+                  /  /_\  \   |  |     |   ___/  |   __   |   /  /_\  \   
+                 /  _____  \  |  `----.|  |      |  |  |  |  /  _____  \  
+                /__/     \__\ |_______|| _|      |__|  |__| /__/     \__\ 
+                                                                                           """)
+                print("")
+                timer("RESTART")
+                play()
+        else:
+            play()
+
+
+def porch():
+    os.system('clear')
+    print("")
+    print("")
+    print(green)
+    scrollTxt("LOOKS LIKE YOU MADE IT TO YOUR DOORDASH ORDER")
+    time.sleep(1)
+    print(green)
+    print("")
+    scrollTxt("Let's take a look at what you won!!!!")
+    time.sleep(1)
+    print("")
+    print(blue)
+    print("https://imgur.com/a/fAzT129")
+    print("")
+    timer2("loading credits")
+    print("")
+    os.system('clear')
+    print(green)
+    scrollTxtfast("""\
+                  _      _____  _    _          
+            /\   | |    |  __ \| |  | |   /\    
+           /  \  | |    | |__) | |__| |  /  \   
+          / /\ \ | |    |  ___/|  __  | / /\ \  
+         / ____ \| |____| |    | |  | |/ ____ \ 
+        /_/    \_\______|_|    |_|  |_/_/    \_\
+
+
+        __          __      _____         ____ _____ 
+        \ \        / /\    / ____|  /\   |  _ \_   _|
+         \ \  /\  / /  \  | (___   /  \  | |_) || |  
+          \ \/  \/ / /\ \  \___ \ / /\ \ |  _ < | |  
+           \  /\  / ____ \ ____) / ____ \| |_) || |_ 
+            \/  \/_/    \_\_____/_/    \_\____/_____|
+
+
+         _____  _____   ____  ______ _______       
+        |_   _|/ ____| |  _ \|  ____|__   __|/\    
+          | | | (___   | |_) | |__     | |  /  \   
+          | |  \___ \  |  _ <|  __|    | | / /\ \  
+         _| |_ ____) | | |_) | |____   | |/ ____ \ 
+        |_____|_____/  |____/|______|  |_/_/    \_\
+
+
+                                                """)
+    time.sleep(5)
+    print("")
+    scrollTxt("DIRECTOR:")
+    time.sleep(2)
+    scrollTxt("   Hidetaka Miyazaki")
+    print("")
+    scrollTxt("Co-Director:")
+    time.sleep(2)
+    scrollTxt("   Yui Tanimura")
+    print("")
+    scrollTxt("Programming Director:")
+    time.sleep(2)
+    scrollTxt("   Takeshi Suzuki")
+    time.sleep(8)
+    print("")
+    print("")
+    scrollTxt("Still Here?")
+    print("")
+    print("")
+    time.sleep(2)
+    scrollTxt("Here's your reward.")
+    print("")
+    print("")
+    scrollTxt("https://youtu.be/j64OZjoi8Sk")
+    print("")
+    time.sleep(2)
+    print("")
+    print(red)
+    timer("Restarting")
+    os.system('clear')
+    play()
+
+
+def greatroom2():
+    directions = ["Kitchen", "Foyer", "second Hallway", "Back to first hallway"]
+    os.system('clear')
+    print(blue)
+    scrollTxt("Wonderful. We're in the great room again....\n")
+    print("")
+    userInput = ""
+    while userInput not in directions:
+        print(green)
+        print("Kitchen / Foyer / second Hallway / Back to first hallway")
+        print(white)
+        userInput = input()
+        if userInput == "Kitchen":
+            os.system('clear')
+            print("")
+            print(red)
+            scrollTxt("You already spent too much time in the Kitchen not progressing the game.\n")
+            scrollTxt("I'm restarting the game simply because I am frustrated with your beta-ness!\n")
+            print("")
+            timer("BETA")
+            os.system('clear')
+            play()
+        elif userInput == "Foyer":
+            foyer2()
+        elif userInput == "second Hallway":
+            secondhallway()
+        elif userInput == "Back to first hallway":
+            os.system('clear')
+            print(red)
+            print("")
+            scrollTxt("If you are going backwards you might as well start from the beginning. Beta!\n")
+            print("")
+            timer("RESTART")
+            play()
+        else:
+            print("Please enter a valid option.")
+
+
+def secondbedroom():
+    print(blue)
+    os.system('clear')
+    print(blue)
+    directions = ["First hallway", "sit in lazyboy"]
+    print("")
+    print("")
+    scrollTxt("You are standing in another bedroom\n")
+    scrollTxt("In the center of this bedroom sits a lazyboy.\n")
+    scrollTxt("The lazyboy faces a wall.\n")
+    scrollTxt("On the wall in front of the Lazyboy is a poster of the Brawny Paper Towel Man.\n")
+    scrollTxt("On the floor next to the wall is a tv.\n")
+    scrollTxt("It looks like something is queued up  on the tv to be played.\n")
+    scrollTxt("You feel like you should sit in the lazyboy and watch the tv?\n")
+    scrollTxt("What do you do?\n")
+    print("")
+    userInput = ""
+    while userInput not in directions:
+        print(green)
+        print("Options: First hallway / sit in lazyboy")
+        print("")
+        userInputssb = input()
+        if userInputssb == "sit in lazyboy":
+            os.system('clear')
+            print(red)
+            scrollTxt("As you ease into your crunchy lazyboy,\n")
+            scrollTxt("casting your gaze on your Brawny Man poster,\n")
+            scrollTxt("The tv plays the youtube video that inspired you to make this room\n")
+            print(green)
+            print("")
+            scrollTxt("https://www.youtube.com/watch?v=IZ04twXflCQ")
+            print("")
+            print(red)
+            scrollTxt("And yes there is a clue in the video that you will need.\n")
+            scrollTxt("Unfortunately, the game restarts as you do spend a lot of\n")
+            scrollTxt("in this room and forget about your doordash delivery.\n")
+            time.sleep(10)
+            os.system('clear')
+            play()
+        elif userInputssb == "First hallway":
+            firsthallway()
+        else:
+            print("Please enter a valid option.")
+
+
+def startingbedroom2():
+    print("")
+    os.system('clear')
+    print("")
+    directions = ["closet", "exit the bedroom", "kitchen"]
+    print(blue)
+    scrollTxt("You are back in the room in which you started. Why are you here without your food?\n")
+    userInput = ""
+    while userInput not in directions:
+        print("")
+        print(green)
+        print("Options: closet/exit the bedroom")
+        print(white)
+        userInput = input()
+        if userInput == "closet":
+            os.system('clear')
+            print("")
+            print("")
+            print(red)
+            scrollTxt("The closet isn't where your door dash delivery is. This is a beta move. You are beta")
+            print("")
+            scrollTxt("BTW, this is a picture of your closet. You might need to reference this later...")
+            print("")
+            print(green)
+            scrollTxt("https://imgur.com/WbWFLQ3")
+            print("")
+            print(red)
+            scrollTxt("BTW, the text will disappear in 5 seconds so you better hurry and save it.")
+            print("")
+            timer("12345")
+            os.system('clear')
+        elif userInput == "exit the bedroom":
+            firsthallway()
+        else:
+            print("Please enter a valid option.")
+
+
+def kitchen():
+    print("")
+    print("")
+    os.system('clear')
+    directions = ["Foyer", "2nd hallway", "backwards towards great room", "pick up knife"]
+    print(blue)
+    scrollTxt("You walk into your kitchen.\n")
+    scrollTxt("It is a fairly clean kitchen considering you never use it.\n")
+    scrollTxt("The only way you know how to get food is through the doordash app.\n")
+    scrollTxt("You do take note that there is a dull knife on the counter.\n")
+    userInput = ""
+    while userInput not in directions:
+        print("")
+        print(green)
+        print("Options: Foyer / backwards to great room / 2nd hallway / pick up the knife")
+        print(white)
+        userInput = input()
+        if userInput == "pick up the knife":
+            os.system('clear')
+            print("")
+            print(red)
+            scrollTxt("Are you sure you want to pick up the knife?\n")
+            time.sleep(2)
+            kitchen2()
+        elif userInput == "Foyer":
+            foyer2()
+        elif userInput == "2nd hallway":
+            secondhallway()
+        elif userInput == "backwards to great room":
+            greatroom2()
+        else:
+            print("Please enter a valid option.")
+
+
+def kitchen2():
+    print("")
+    print("")
+    directions = ["Foyer", "2nd hallway", "backwards towards great room", "pick up knife"]
+    print(blue)
+    scrollTxt("You are still in your kitchen thinking like a beta about the knife.\n")
+    scrollTxt("I mean, I know your avatar is a smoking ghost face killer. But this isn't Scream.\n")
+    userInput = ""
+    while userInput not in directions:
+        print("")
+        print(green)
+        print("Options: Foyer / backwards to great room / 2nd hallway / pick up the knife")
+        print("")
+        print(white)
+        userInput = input()
+        if userInput == "pick up the knife":
+            os.system('clear')
+            print(red)
+            scrollTxt("You really are determined to pick up this knife aren't you?\n")
+            time.sleep(2)
+            kitchen3()
+        elif userInput == "Foyer":
+            foyer2()
+        elif userInput == "2nd hallway":
+            secondhallway()
+        elif userInput == "backwards to great room":
+            greatroom2()
+        else:
+            print("Please enter a valid option.")
+
+
+def kitchen3():
+    print("")
+    print("")
+    directions = ["Foyer", "2nd hallway", "backwards towards great room", "pick up knife"]
+    global weapon
+    print(blue)
+    scrollTxt("I dare you to try and pick up the f-ing knife\n")
+    scrollTxt("one more f-ing time!\n")
+    userInput = ""
+    while userInput not in directions:
+        print("")
+        print(green)
+        print("Options: Foyer / backwards to great room / 2nd hallway / pick up the knife")
+        print("")
+        print(white)
+        userInput = input()
+        if userInput == "pick up the knife":
+            print(green)
+            print("")
+            print("Fine, you pick up the stupid knife!")
+            time.sleep(2)
+            weapon = True
+            kitchen4()
+        elif userInput == "Foyer":
+            foyer2()
+        elif userInput == "second hallway":
+            secondhallway()
+        elif userInput == "backwards to great room":
+            greatroom2()
+        else:
+            print("Please enter a valid option.")
+
+
+def kitchen4():
+    print("")
+    os.system('clear')
+    directions = ["Foyer", "2nd hallway", "backwards towards great room"]
+    print(blue)
+    scrollTxt("You are still in your kitchen...\n")
+    scrollTxt("But now you are standing in your kitchen holding a knife like an idiot.\n")
+    userInput = ""
+    while userInput not in directions:
+        print("")
+        print(green)
+        print("Options: Foyer / backwards to great room / 2nd hallway")
+        print(white)
+        userInput = input()
+        if userInput == "Foyer":
+            foyer2()
+        elif userInput == "2nd hallway":
+            secondhallway()
+        elif userInput == "backwards to great room":
+            greatroom2()
+        else:
+            print("Please enter a valid option.")
+
+
+def play():
+    global weapon
+    global jael
+    if __name__ == "__main__":
+        while True:
+            print(red)
+            print("")
+            print("")
+            print("""\
+                              _      _____  _    _          
+                        /\   | |    |  __ \| |  | |   /\    
+                       /  \  | |    | |__) | |__| |  /  \   
+                      / /\ \ | |    |  ___/|  __  | / /\ \  
+                     / ____ \| |____| |    | |  | |/ ____ \ 
+                    /_/    \_\______|_|    |_|  |_/_/    \_\
+
+
+                    __          __      _____         ____ _____ 
+                    \ \        / /\    / ____|  /\   |  _ \_   _|
+                     \ \  /\  / /  \  | (___   /  \  | |_) || |  
+                      \ \/  \/ / /\ \  \___ \ / /\ \ |  _ < | |  
+                       \  /\  / ____ \ ____) / ____ \| |_) || |_ 
+                        \/  \/_/    \_\_____/_/    \_\____/_____|
+
+
+                     _____  _____   ____  ______ _______       
+                    |_   _|/ ____| |  _ \|  ____|__   __|/\    
+                      | | | (___   | |_) | |__     | |  /  \   
+                      | |  \___ \  |  _ <|  __|    | | / /\ \  
+                     _| |_ ____) | | |_) | |____   | |/ ____ \ 
+                    |_____|_____/  |____/|______|  |_/_/    \_\
+
+
+                                        """)
+            timer3("RESTARTING")
+            ossystemdelayclear2()
+            print("")
+            print("")
+            print(red)
+            scrollTxt("LOOKS LIKE WE HAVE TO RESTART THE GAME.....HOPEFULLY YOU CAN FIGURE THIS OUT!\n")
+            weapon = False
+            jael = False
+            print(red)
+            scrollTxt("WELCOME TO THE START OF THE GAME!!!!!!!!\n")
+            time.sleep(0.1)
+            print("")
+            print(blue)
+            scrollTxt("This is the Alphawasabiisbeta...game.\n")
+            time.sleep(0.05)
+            print("")
+            scrollTxt("You are an avid streamer.\n")
+            time.sleep(0.05)
+            print("")
+            scrollTxt("Your content is....so good.\n")
+            time.sleep(0.05)
+            print("")
+            scrollTxt("In this game your goal is to retrieve your doordash order.\n")
+            time.sleep(0.05)
+            print("")
+            scrollTxt("In order to do that you just have to navigate to the front door and open it.\n")
+            print("")
+            scrollTxt("If you do anything beta, you have to start over.\n")
+            print("")
+            scrollTxt("Let's start with your name. " + userInput1 + ", what is your name?: \n")
+            print("")
+            print(white)
+            userInput = input()
+            if userInput == "Alphawasabiisbeta":
+                os.system('clear')
+                print(green)
+                print("")
+                scrollTxt("That's right. Your name is Alphawasabiisbeta. Glad you understand that.\n")
+                print("")
+                scrollTxt("Now we can continue with the game.\n")
+                startingbedroom()
+            else:
+                os.system('clear')
+                print(red)
+                print("")
+                print("That's not your name. Not knowing your name is pretty beta...\n")
+
+
+def play2():
+    global jael
+    global weapon
+    if __name__ == "__main__":
+        while True:
+            print(red)
+            print("")
+            print("")
+            print("""\
+                              _      _____  _    _          
+                        /\   | |    |  __ \| |  | |   /\    
+                       /  \  | |    | |__) | |__| |  /  \   
+                      / /\ \ | |    |  ___/|  __  | / /\ \  
+                     / ____ \| |____| |    | |  | |/ ____ \ 
+                    /_/    \_\______|_|    |_|  |_/_/    \_\
+
+
+                    __          __      _____         ____ _____ 
+                    \ \        / /\    / ____|  /\   |  _ \_   _|
+                     \ \  /\  / /  \  | (___   /  \  | |_) || |  
+                      \ \/  \/ / /\ \  \___ \ / /\ \ |  _ < | |  
+                       \  /\  / ____ \ ____) / ____ \| |_) || |_ 
+                        \/  \/_/    \_\_____/_/    \_\____/_____|
+
+
+                     _____  _____   ____  ______ _______       
+                    |_   _|/ ____| |  _ \|  ____|__   __|/\    
+                      | | | (___   | |_) | |__     | |  /  \   
+                      | |  \___ \  |  _ <|  __|    | | / /\ \  
+                     _| |_ ____) | | |_) | |____   | |/ ____ \ 
+                    |_____|_____/  |____/|______|  |_/_/    \_\
+
+
+                                        """)
+            ossystemdelayclear2()
+            print("")
+            print("")
+            print(red)
+            scrollTxt("LOOKS LIKE WE HAVE TO RESTART THE GAME.....HOPEFULLY YOU CAN FIGURE THIS OUT!\n")
+            weapon = False
+            jael = False
+            print(red)
+            print("")
+            scrollTxt("WELCOME TO THE START OF THE GAME!!!!!!!!\n")
+            time.sleep(0.1)
+            print("")
+            print(blue)
+            scrollTxt("This is the Alphawasabiisbeta...game.\n")
+            time.sleep(0.05)
+            print("")
+            scrollTxt("You are an avid streamer.\n")
+            time.sleep(0.01)
+            print("")
+            scrollTxt("Your content is....so good.\n")
+            time.sleep(0.05)
+            print("")
+            scrollTxt("In this game your goal is to retrieve your doordash order.\n")
+            time.sleep(0.05)
+            print("")
+            scrollTxt("In order to do that you just have to navigate to the front door and open it.\n")
+            print("")
+            scrollTxt("If you do anything beta, you have to start over.\n")
+            print("")
+            scrollTxt("Let's start with your name. " + userInput1 + ", what is your name?: \n")
+            print("")
+            print(white)
+            userInput = input()
+            if userInput == "Alphawasabiisbeta":
+                os.system('clear')
+                print(green)
+                print("")
+                scrollTxt("That's right " + userInput1 + ". Your name is actually Alphawasabiisbeta.\n")
+                scrollTxt("Glad you understand that.\n")
+                print("")
+                scrollTxt("Now we can continue with the game.")
+                startingbedroom()
+            else:
+                os.system('clear')
+                print(red)
+                print("")
+                print("That's not your name. Not knowing your name is pretty beta...")
+                play2()
+
+
+if __name__ == "__main__":
+    os.system('clear')
+    while True:
+        print(green)
+        print("")
+        print("")
+        scrollTxtfast("""\
+                  _      _____  _    _          
+            /\   | |    |  __ \| |  | |   /\    
+           /  \  | |    | |__) | |__| |  /  \   
+          / /\ \ | |    |  ___/|  __  | / /\ \  
+         / ____ \| |____| |    | |  | |/ ____ \ 
+        /_/    \_\______|_|    |_|  |_/_/    \_\
+
+
+        __          __      _____         ____ _____ 
+        \ \        / /\    / ____|  /\   |  _ \_   _|
+         \ \  /\  / /  \  | (___   /  \  | |_) || |  
+          \ \/  \/ / /\ \  \___ \ / /\ \ |  _ < | |  
+           \  /\  / ____ \ ____) / ____ \| |_) || |_ 
+            \/  \/_/    \_\_____/_/    \_\____/_____|
+
+
+         _____  _____   ____  ______ _______       
+        |_   _|/ ____| |  _ \|  ____|__   __|/\    
+          | | | (___   | |_) | |__     | |  /  \   
+          | |  \___ \  |  _ <|  __|    | | / /\ \  
+         _| |_ ____) | | |_) | |____   | |/ ____ \ 
+        |_____|_____/  |____/|______|  |_/_/    \_\
+
+
+                            """)
+        timer("LOADING")
+        os.system('clear')
+        print("")
+        print("")
+        print(green)
+        scrollTxt("RULES:")
+        time.sleep(1)
+        print("")
+        print("")
+        scrollTxt("1. Make the wrong decision...restart game.")
+        time.sleep(3)
+        print("")
+        print("")
+        scrollTxt("2. Mistyping the right decision is the wrong decision.")
+        time.sleep(3)
+        print("")
+        print("")
+        timer3("READY?")
+        time.sleep(2)
+        os.system('clear')
+        print(red)
+        print("")
+        print("")
+        scrollTxt("WELCOME TO THE START OF THE GAME!!!!!!!!\n")
+        time.sleep(0.1)
+        print("")
+        print(blue)
+        scrollTxt("This is the Alphawasabiisbeta...game.\n")
+        time.sleep(0.05)
+        print("")
+        scrollTxt("You are an avid streamer.\n")
+        time.sleep(0.01)
+        print("")
+        scrollTxt("Your content is....so good.\n")
+        time.sleep(0.05)
+        print("")
+        scrollTxt("In this game your goal is to retrieve your doordash order.\n")
+        time.sleep(0.05)
+        print("")
+        scrollTxt("In order to do that you just have to navigate to the front door and open it.\n")
+        print("")
+        scrollTxt("If you do anything beta, you have to start over.\n")
+        print("")
+        scrollTxt("Let's start with your name. Alphawasabiisbeta, what is your name?: \n")
+        print(white)
+        userInput1 = input()
+        print(red)
+        print("")
+        if userInput1 == "Alphawasabiisbeta":
+            print(green)
+            os.system('clear')
+            print("")
+            print(green)
+            scrollTxt("That's right. Your name is Alphawasabiisbeta. Glad you understand that.\n")
+            print("")
+            scrollTxt("Now we can continue with the game.\n")
+            startingbedroom()
+        else:
+            os.system('clear')
+            print("")
+            print(red)
+            print("That's not your name. Not knowing your name is pretty beta...\n")
+            play2()
